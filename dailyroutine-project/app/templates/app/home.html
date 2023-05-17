@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block title %} Home {% endblock %}
+{% block content %}
+
+<br />
+{% for character in characters %}
+    <hr>
+        <p>{{ character }}:</p>
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-6 g-3">
+        {% for preset in presets %}
+            {% if character == preset.character%}
+                <a href="{% url 'details' preset.id %}" class="text-decoration-none text-reset">
+                    <div class="col">
+                        <div class="card shadow-sm">
+                            <div class="card-body">
+                                <p class="card-text text-center" >{{ preset.name }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            {% endif %}
+        {% endfor %}
+    </div>
+
+{% endfor %}
+
+<br />
+
+{% endblock %}
+
