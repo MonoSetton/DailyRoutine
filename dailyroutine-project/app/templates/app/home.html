@@ -3,9 +3,19 @@
 {% block content %}
 
 {% for task in tasks  %}
-
-    <p>{{ task }}</p>
-
+        <div class="card mt-2">
+            <div class="card-body d-flex flex-row justify-content-between">
+            {% if task.completed %}
+                <del><a href="{% url 'change_task_completion' task.id %}" class="text-reset text-decoration-none"><strong>{{ task.name }}</strong></a></del>
+                {% else %}
+                <a href="{% url 'change_task_completion' task.id %}" class="text-reset text-decoration-none"><strong>{{ task.name }}</strong></a>
+                {% endif %}
+                <div>
+                    <a href="{% url 'update_task' task.id %}" class="btn btn-info">Update</a>
+                    <a href="{% url 'delete_task' task.id %}" class="btn btn-danger">Delete</a>
+                </div>
+            </div>
+        </div>
 {% endfor %}
 
 

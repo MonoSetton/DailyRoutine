@@ -41,6 +41,7 @@ def update_task(request, pk):
         raise BadRequest("You do not have permission to see this site")
 
 
+@login_required(login_url='/login')
 def delete_task(request, pk):
     task = Task.objects.get(id=pk)
     if task.author == request.user:
@@ -50,5 +51,16 @@ def delete_task(request, pk):
         return render(request, 'app/delete_task.html', {'task': task})
     else:
         raise BadRequest("You do not have permission to see this site")
+
+
+def change_task_completion(request, pk):
+    task = Task.objects.get(id=pk)
+    print(task.completed)
+    task.completed = not task.completed
+    print(task.completed)
+    task.save()
+    return redirect('/')
+
+
 
 
