@@ -53,6 +53,7 @@ def delete_task(request, pk):
         raise BadRequest("You do not have permission to see this site")
 
 
+@login_required(login_url='/login')
 def change_task_completion(request, pk):
     task = Task.objects.get(id=pk)
     print(task.completed)
@@ -62,5 +63,10 @@ def change_task_completion(request, pk):
     return redirect('/')
 
 
-
+def reset_task_completion(request):
+    tasks = Task.objects.all()
+    for task in tasks:
+        task.completed = False
+        task.save()
+    return redirect('/')
 
