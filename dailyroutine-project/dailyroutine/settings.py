@@ -25,8 +25,12 @@ SECRET_KEY = 'django-insecure-g6ez83iw1$&745(!q=aqs72vs!7-h%4qw^=nnd@r*97hxn=-ge
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
+CSRF_TRUSTED_ORIGINS = [
+    'http://dailyroutine-mono.up.railway.app',
+    'https://dailyroutine-mono.up.railway.app',
+]
 
 # Application definition
 
