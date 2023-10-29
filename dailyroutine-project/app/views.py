@@ -56,9 +56,7 @@ def delete_task(request, pk):
 @login_required(login_url='/login')
 def change_task_completion(request, pk):
     task = Task.objects.get(id=pk)
-    print(task.completed)
     task.completed = not task.completed
-    print(task.completed)
     task.save()
     return redirect('/')
 
