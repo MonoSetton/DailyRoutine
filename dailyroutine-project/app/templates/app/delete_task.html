@@ -3,13 +3,16 @@
 {% load crispy_forms_tags %}
 {% block content %}
 
-<p>Are you sure you want to delete "{{ task.name }}" preset?</p>
+<div class="card mt-3">
+    <div class="card-body">
+        <p class="card-text">Are you sure you want to delete "{{ task.name }}" preset?</p>
 
-<form action="{% url 'delete_task' task.id %}" method="post">
-    {% csrf_token %}
-    <input type="submit" value="Yes">
-</form>
-
-<a href="{% url 'home' %}"><button class="btn btn-info">Cancel</button></a>
+        <form action="{% url 'delete_task' task.id %}" method="post">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-danger me-2">Yes</button>
+            <a href="{% url 'home' %}" class="btn btn-secondary">Cancel</a>
+        </form>
+    </div>
+</div>
 
 {% endblock %}
