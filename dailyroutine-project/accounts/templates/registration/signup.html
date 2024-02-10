@@ -2,11 +2,6 @@
 {% block title %}Sign Up{% endblock %}
 {% load crispy_forms_tags %}
 {% block content %}
-<style>
-    form, input, label, p {
-    color: white !important;
-}
-</style>
 
 <form method="POST">
     {% csrf_token %}
