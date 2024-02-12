@@ -5,7 +5,7 @@
 
 <div class="card mt-3">
     <div class="card-body">
-        <p class="card-text">Are you sure you want to delete "{{ task.name }}" preset?</p>
+        <p class="card-text">Are you sure you want to delete "{{ task.name }}" task?</p>
 
         <form action="{% url 'delete_task' task.id %}" method="post">
             {% csrf_token %}
