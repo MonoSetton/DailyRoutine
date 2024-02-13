@@ -1,1 +1,1 @@
-Hosted here ---> dailyroutine-mono.up.railway.app
+Hosted here ---> https://dailyroutine-mono.up.railway.app
