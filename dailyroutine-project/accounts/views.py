@@ -1,8 +1,10 @@
 from django.shortcuts import render, redirect
 from .forms import RegisterForm
 from django.contrib.auth import login
+from .decorators import unauthenticated_user
 
 
+@unauthenticated_user
 def sign_up(request):
     if request.method == 'POST':
         form = RegisterForm(request.POST)
