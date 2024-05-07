@@ -22,20 +22,50 @@
     <meta name="theme-color" content="#712cf9">
 
     <style>
+        /* Custom styles */
+        body {
+            background-color: #f8f9fa;
+            color: #212529;
+        }
+
         .navbar-brand {
             font-weight: bold;
+            color: #6c757d;
         }
 
         .navbar-text {
             margin-left: 1rem;
+            color: #6c757d;
         }
 
         .navbar-nav .nav-link {
             margin-right: 1rem;
+            color: #6c757d;
         }
 
         .container {
             margin-top: 2rem;
+        }
+
+        .btn {
+            background-color: #712cf9;
+            border-color: #712cf9;
+            color: #ffffff;
+        }
+
+        .btn:hover {
+            background-color: #5d24b4;
+            border-color: #5d24b4;
+        }
+
+        .delete-btn {
+        background-color: #dc3545; /* Bootstrap danger color */
+        border-color: #dc3545; /* Bootstrap danger color */
+        }
+
+        .delete-btn:hover {
+            background-color: #c82333; /* Darker shade of red on hover */
+            border-color: #c82333; /* Darker shade of red on hover */
         }
     </style>
 </head>
@@ -56,20 +86,13 @@
                 <ul class="navbar-nav">
                     {% if user.is_authenticated %}
                         <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="{% url 'create_task' %}"><button class="btn btn-primary">Add Task</button></a>
+                            <a class="nav-link" aria-current="page" href="{% url 'create_task' %}"><button class="btn">Add Task</button></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="{% url 'reset_task_completion' %}"><button class="btn btn-primary">Reset Tasks</button></a>
+                            <a class="nav-link" aria-current="page" href="{% url 'reset_task_completion' %}"><button class="btn">Reset Tasks</button></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="/logout"><button class="btn btn-primary">Logout</button></a>
-                        </li>
-                    {% else %}
-                        <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="{% url 'login' %}"><button class="btn btn-primary">Login</button></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'signup' %}"><button class="btn btn-primary">Signup</button></a>
+                            <a class="nav-link" aria-current="page" href="/logout"><button class="btn">Logout</button></a>
                         </li>
                     {% endif %}
                 </ul>

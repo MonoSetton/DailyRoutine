@@ -62,7 +62,7 @@ def change_task_completion(request, pk):
 
 
 def reset_task_completion(request):
-    tasks = Task.objects.all()
+    tasks = Task.objects.filter(author=request.user)
     for task in tasks:
         task.completed = False
         task.save()
