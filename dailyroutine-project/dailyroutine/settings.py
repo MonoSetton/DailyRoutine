@@ -29,8 +29,8 @@ DEBUG = False
 ALLOWED_HOSTS = ['*']
 
 CSRF_TRUSTED_ORIGINS = [
-    'http://dailyroutine-mono.up.railway.app',
-    'https://dailyroutine-mono.up.railway.app',
+    'http://dailyroutine.up.railway.app',
+    'https://dailyroutine.up.railway.app',
 ]
 
 # Application definition
